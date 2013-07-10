@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <tal:resources tal:content="provider:uvc-resources" />
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="" tal:attributes="href layout.base"/>
+    <tal:header tal:content="structure provider:uvc-headers" />
+  </head>
+  <body>
+  <div id="uvc-header" class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+	    <div class="container">
+  	    <a tal:attributes="href view.application_url()" class="brand">UVCSite</a>
+        <div class="nav-collapse">
+	         <tal:viewlets content="structure provider:uvc-pagetop" />
+        </div>
+      </div>
+    </div>
+	</div>
+    <div class="container">
+      <div class="content">
+        <div id="uvc-above-body"
+	     tal:content="structure provider:uvc-above-body"></div>
+        <div id="uvc-tabs"
+	     tal:content="structure provider:uvc-tabs"></div>
+        <div id="uvc-inner-body"
+	     tal:content="structure view.content()"></div>
+        <div id="uvc-below-body"
+	     tal:content="structure provider:uvc-below-body"></div>
+      </div>
+      <footer class="footer" tal:content="structure provider:uvc-footer"></footer>
+    </div>
+  </body>
+</html>

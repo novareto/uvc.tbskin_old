@@ -1,0 +1,11 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   i18n_domain="nva.tbskin"
+   package="nva.tbskin"
+   >
+
+  <includeOverrides package="uvcsite" file="ftesting.zcml"/>
+  <include package="nva.tbskin" />
+
+</configure>
+

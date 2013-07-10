@@ -1,0 +1,33 @@
+<form action="." tal:attributes="action request.URL" method="post"
+      enctype="multipart/form-data"
+      i18n:domain="zeam.form.base" class="form-horizontal">
+
+  <h2 tal:condition="view.label"
+      tal:content="view.label">Label</h2>
+
+  <p tal:condition="view.description"
+     tal:content="view.description">Description</p>
+
+  <p class="alert-message block-message"
+     tal:condition="view.status"
+     tal:content="view.status">Status</p>
+
+  <div class="fields" tal:condition="view.fieldWidgets">
+    <div class="control-group" tal:repeat="widget view.fieldWidgets">
+       <label class="control-label" for="#" tal:attributes="for widget.htmlId()" tal:content="widget.title">Label</label>
+       <tal:error tal:define="error widget.error" tal:condition="error" />
+       <div class="input controls">
+          <tal:widget tal:content="structure widget.render()" />
+          <span class="help-inline" tal:condition="widget.error" tal:content="widget.error.title"> Error </span>
+          <p class="help-block" tal:condition="widget.description" tal:content="widget.description" tal:attributes="for widget.htmlId()"></p>
+       </div>
+    </div>
+  </div>
+
+  <div class="form actions" tal:condition="view.actionWidgets">
+    <div class="action" tal:repeat="widget view.actionWidgets">
+      <tal:widget tal:content="structure widget.render()" />
+    </div>
+  </div>
+
+</form>

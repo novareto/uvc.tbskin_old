@@ -1,0 +1,58 @@
+/* EXAMPLE */
+/*
+html {
+ background-color: #FFFFFF;
+}
+
+body {
+    background-color: #FFFFFF;
+    background-image: url("grid-18px-masked.png");
+    background-position: 0 40px;
+    background-repeat: repeat-x;
+    padding-top: 58px;
+    position: relative;
+}
+
+.footer {
+    border-top: 1px solid #E5E5E5;
+    margin-top: 50px;
+    padding: 5px 0 36px;
+}
+*/
+div#footerviewlet{
+  float:right;
+
+}
+
+#homefolder-contenttypes {
+  float: right;
+}
+
+#homefolder-contenttypes a:hover {
+  color: #666 !important;
+}
+
+div#uvc-tabs {
+  float:right;
+  background-color: #FBFBFB;
+  border: 1px solid #DDDDDD;
+  background-image: -moz-linear-gradient(center top , #FFFFFF, #F5F5F5);
+}
+
+div#uvc-tabs ul {
+  margin-bottom: 1px;
+}
+
+.help-button {
+  float: right;
+}
+
+ul#documentactionsmenuviewlet{
+  float: right;
+  list-style: none;
+  padding-top: 1em;
+}
+
+.breadcrumb {
+  padding-top: 51px;
+}

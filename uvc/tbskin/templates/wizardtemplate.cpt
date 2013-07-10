@@ -1,0 +1,47 @@
+<div>
+  <form action="." novalidate="novalidate" method="post" tal:attributes="action request.getURL()" enctype="multipart/form-data" class="form-horizontal">
+  <h2 tal:condition="view.label"
+      tal:content="view.label">Label</h2>
+  <p tal:condition="view.description"
+     tal:content="view.description">Description</p>
+  <p class="alert-message block-message"
+     tal:condition="view.status"
+     tal:content="view.status">Status</p>
+
+  <fieldset>
+      <legend tal:content="view.current.label" />
+      <div id="extrainfo" tal:replace="structure provider: uvcsite.extrainfo"/>
+      <div class="step-fields" tal:condition="view.current.fieldWidgets">
+        <div class="control-group" tal:repeat="widget view.current.fieldWidgets"
+              tal:attributes="class widget.error and 'control-group error' or 'control-group'; id 'field-' + widget.htmlId()">
+             <label class="control-label" for="#" tal:attributes="for widget.htmlId()">
+              <span tal:content="widget.title"> </span> 
+              <span tal:content="string:*" tal:condition="widget.required"/>
+             </label>
+
+          <div class="input controls">
+            <tal:widget tal:content="structure widget.render()" />
+            <span class="help-inline" tal:condition="widget.error" tal:content="widget.error.title"> Error </span>
+            <p class="help-block" tal:condition="widget.description" tal:content="widget.description" tal:attributes="for widget.htmlId()"></p>
+          </div>
+        </div>
+      </div>
+      <div class="fields" tal:condition="view.fieldWidgets">
+        <span class="field" tal:repeat="widget view.fieldWidgets">
+          <tal:widget tal:content="structure widget.render()" />
+        </span>
+      </div>
+      <div class="form-actions">
+        <div class="action">
+         <span tal:repeat="widget view.actionWidgets">
+          <tal:widget tal:content="structure widget.render()" />
+        </span>
+        <span tal:repeat="widget view.current.actionWidgets">
+           <tal:widget tal:content="structure widget.render()" />
+         </span>
+        </div>
+      </div>
+  </fieldset>
+  </form>
+</div>
+
