@@ -1,9 +1,6 @@
 <configure xmlns="http://namespaces.zope.org/zope"
-           xmlns:browser="http://namespaces.zope.org/browser"
            xmlns:grok="http://namespaces.zope.org/grok">
-  <include package="grok" />
-  <include package="megrok.layout" file="meta.zcml" />
+  <include package="uvclight" />
   <grok:grok package="." />
-  <browser:defaultSkin name="tbskin" />
 </configure>
 
